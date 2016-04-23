@@ -10,6 +10,11 @@ module.exports = {
         });
     },
     delete: function (param) {
+        return Task.destroy({
+            where: {
+                id: param.id
+            }
+        });
 
     }
 };

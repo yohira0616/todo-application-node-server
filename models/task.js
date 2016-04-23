@@ -8,7 +8,7 @@ var Task = sequelize.define('task', {
     }
 });
 
-Task.sync({force:true});
+Task.sync();
 
 module.exports = Task;
 

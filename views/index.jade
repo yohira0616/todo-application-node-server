@@ -3,3 +3,21 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  label(for='task-create-input') 新しいタスクを入力
+  input(type='text' id='task-create-input')
+  button(type='button' id='task-create') 登録
+  table
+    thead
+      tr
+        th タスク名
+        th id
+        th 操作
+    tbody
+      tr
+        td
+        td
+        td
+          button(type='button' class='task-done') 完了
+  script(src='/javascripts/lib/jquery/dist/jquery.js')
+  script(src='/javascripts/lib/growl/javascripts/jquery.growl.js')
+  script(src='/javascripts/index.js')
