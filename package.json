@@ -17,6 +17,8 @@
   },
   "devDependencies": {
     "gulp": "^3.9.1",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "pg": "^4.5.3",
+    "pg-hstore": "^2.3.2"
   }
 }
