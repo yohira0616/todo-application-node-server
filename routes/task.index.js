@@ -1,7 +1,5 @@
 var express = require('express');
 var router = express.Router();
-
-var TaskRepository = require('../repository/task.repository');
 var Task = require('../models/task');
 
 function corsEnable(res) {
@@ -14,7 +12,6 @@ router.get('/all', function (req, res, next) {
   corsEnable(res);
 
   Task.findAll().then(function (result) {
-    console.log(result);
     res.send(result);
   });
 });
@@ -22,8 +19,12 @@ router.get('/all', function (req, res, next) {
 router.all('/new', function (req, res, next) {
   corsEnable(res);
   var param = req.body;
-  Task.create(param).then(function () {
-    res.send('done');
+  console.log(req);
+  console.log(param);
+  Task.create(param).then(function (result) {
+    res.send(result);
+  }).catch(function (error) {
+    res.send(error);
   });
 });
 
